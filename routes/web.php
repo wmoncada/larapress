@@ -22,3 +22,11 @@ Route::get('/', "PageController@posts");
 Route::get('blog/{post}', 'PageController@post')->name('post');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
