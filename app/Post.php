@@ -19,6 +19,10 @@ class Post extends Model
         ];
     }
 
+    protected $fillable = [
+        'title', 'body', 'iframe', 'image', 'user_id'
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -27,5 +31,11 @@ class Post extends Model
     public function getGetExcerptAttribute($name)
     {
         return substr($this->body, 0, 140);
+    }
+
+    public function getGetImageAttribute()
+    {
+        if($this->image)
+            return url("storage/$this->image");
     }
 }
